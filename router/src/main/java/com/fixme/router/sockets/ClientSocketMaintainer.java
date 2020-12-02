@@ -15,7 +15,7 @@ public class ClientSocketMaintainer implements Runnable {
 
     private Socket socket;
     public String socketFriendlyName;
-    private static final Logger log = Logger.getLogger("ClientSocketMaintainer");
+    private static final Logger log = Logger.getLogger("Router");
 
     public ClientSocketMaintainer(Socket socket) {
         this.socket = socket;
@@ -30,7 +30,7 @@ public class ClientSocketMaintainer implements Runnable {
 
         RequestHandler request = new ValidationProcessor(
             new ClassificationProcessor(
-                new RelayProcessor(null)
+                    new RelayProcessor(null)
             )
         );
 

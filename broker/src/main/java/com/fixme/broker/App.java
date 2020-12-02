@@ -13,7 +13,7 @@ import com.fixme.commons.orders.OrderType;
 
 public class App {
     static {
-        System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tF %1$tT] [%4$-7s] %5$s %n");
+        System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tF %1$tT] [\u001b[36;1mBROKER\u001b[0m] [%4$-7s] %5$s %n");
     }
 
     private static Socket socket;
@@ -21,7 +21,7 @@ public class App {
     private static BufferedReader in;
     private static String id;
     
-    private static final Logger log = Logger.getLogger( "Market" );
+    private static final Logger log = Logger.getLogger( "Broker" );
     private static Scanner userInput = new Scanner(System.in);
 
     public static void main( String[] args ) throws Exception {
@@ -35,8 +35,6 @@ public class App {
             log.severe(String.format("Broker cannot start, router may be unavailable [%s]", e.getMessage()));
             System.exit(1);
         }
-        
-        new Message();
 
         out = new PrintWriter(socket.getOutputStream());
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -169,23 +167,35 @@ public class App {
     }
 
     private static void handleRouterReply() {
+        String msgType = null;
+        Message message = null;
+
         try {
-            System.out.println("We wait for input...");
-            String inputLine = in.readLine();
-
-            // This is not handled at all, because lazy.
-            // Use this to create a message then do stuff with it
-            userInput.nextLine();
-
-            MessageStaticFactory.fromRawString(inputLine);
-
-            if (inputLine == null) {
-                log.severe("Connection to router lost");
-                System.exit(1);
-            }
-
+            message = MessageStaticFactory.fromRawString(in.readLine());
         } catch (Exception e) {
-            // Dont know if this needs to be here?
+            log.severe("Connection to router lost");
+            System.exit(1);   
         }
+
+        msgType = message.get("35");
+        switch (msgType) {
+            case "1":
+                System.out.println("Order was successfully completed");
+                break;
+
+            case "0":
+                System.out.println("Order was rejected : " + message.get("58"));
+                break;
+        
+            case "3":
+                System.out.println("An error has occured : " + message.get("58"));
+                break;
+        
+            default:
+                System.out.println("Got an unknown response : " + message.toString());
+                break;
+        }
+        System.out.println("Press any key to start new order.");
+        userInput.nextLine();
     }
 }
