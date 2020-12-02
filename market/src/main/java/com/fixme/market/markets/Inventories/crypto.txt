@@ -1,0 +1,10 @@
+ETH,Ethereum
+XRP,Ripple
+LTC,Litecoin
+USDT,Tether
+BCH,Bitcoin Cash
+LIBRA,Libra
+XMR,Monero
+EOS,EOS
+BNB,Binance Coin
+ETH,Ethereum
