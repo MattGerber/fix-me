@@ -125,6 +125,25 @@ public class Database {
         }
     }
 
+    public static ArrayList<String> GetMarketList() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT market_name FROM markets";
+        Connection conn = SQLiteHelper.GetInstance();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            ArrayList<String> marketList = new ArrayList<>();
+            while (rs.next()){
+                marketList.add(rs.getString("market_name"));
+            }
+            return (marketList);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            SQLiteHelper.CloseConnection(conn);
+        }
+        return null;
+    }
+
     public static ResultSet GetAllTransactions() throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM transactions";
         Connection conn = SQLiteHelper.GetInstance();

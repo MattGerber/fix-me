@@ -2,14 +2,20 @@ package com.fixme.broker;
 
 import java.io.*;
 import java.net.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import com.fixme.commons.database.Database;
+import com.fixme.commons.database.Items;
+import com.fixme.commons.database.MarketResults;
 import com.fixme.commons.messaging.Message;
 import com.fixme.commons.messaging.MessageStaticFactory;
 import com.fixme.commons.orders.Order;
 import com.fixme.commons.orders.OrderType;
+
+import javax.sound.midi.Instrument;
 
 public class App {
     static {
@@ -20,6 +26,8 @@ public class App {
     private static PrintWriter out;
     private static BufferedReader in;
     private static String id;
+
+    private static String marketName;
     
     private static final Logger log = Logger.getLogger( "Broker" );
     private static Scanner userInput = new Scanner(System.in);
@@ -49,10 +57,11 @@ public class App {
             log.info(String.format("Broker added to routing table ID=%s", App.id));
         }
 
-        System.out.println("\nIt is the future, all monies are now crypto.. Good luck.");
+//        System.out.println("\nIt is the future, all monies are now crypto.. Good luck.");
         System.out.println("Press any key to continue.");
         userInput.nextLine();
         
+        getMarket();
         while (true) {
 
             OrderType type = selectOrderType();
@@ -60,7 +69,7 @@ public class App {
             Integer amount = getAmount();
             Double price = getPrice(type);
 
-            Order order = new Order("Crypto", instrument, amount, price, App.id);
+            Order order = new Order(marketName, instrument, amount, price, App.id);
             Message message = MessageStaticFactory.orderMessage(order, type);
 
             out.println(message.toString());
@@ -77,21 +86,39 @@ public class App {
         }
     }
 
+    private static void getMarket() throws SQLException, ClassNotFoundException {
+        ArrayList<String> marketList = Database.GetMarketList();
+        while(!marketList.contains(marketName)) {
+            System.out.println("Select a Market to buy/sell to");
+            Database.DisplayMarkets();
+            marketName = userInput.nextLine();
+        }
+    }
+
     private static String getInstrument() {
         
         cls();
-
         ArrayList<String> instruments = new ArrayList<String>();
-        instruments.add("ETH,Ethereum");
-        instruments.add("XRP,Ripple");
-        instruments.add("LTC,Litecoin");
-        instruments.add("USDT,Tether");
-        instruments.add("BCH,Bitcoin Cash");
-        instruments.add("LIBRA,Libra");
-        instruments.add("XMR,Monero");
-        instruments.add("EOS,EOS");
-        instruments.add("BNB,Binance Coin");
-        instruments.add("ETH,Ethereum");
+        try {
+            MarketResults marketResults = Database.GetMarketByName(marketName);
+            for (Items i : marketResults.getItemList())
+                instruments.add(i.getCode() + ',' + i.getProduct());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // instruments.add("ETH,Ethereum");
+        // instruments.add("XRP,Ripple");
+        // instruments.add("LTC,Litecoin");
+        // instruments.add("USDT,Tether");
+        // instruments.add("BCH,Bitcoin Cash");
+        // instruments.add("LIBRA,Libra");
+        // instruments.add("XMR,Monero");
+        // instruments.add("EOS,EOS");
+        // instruments.add("BNB,Binance Coin");
+        // instruments.add("ETH,Ethereum");
 
         Integer count = 1;
         for (String s : instruments) {

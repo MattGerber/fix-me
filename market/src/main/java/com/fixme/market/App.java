@@ -29,13 +29,19 @@ public class App {
     private static PrintWriter out;
     private static BufferedReader in;
     private static CryptoMarket market;
+    private static String marketName;
     private static Scanner userInput = new Scanner(System.in);
     public static final Logger log = Logger.getLogger( "Market" );
 
     public static void main( String[] args ) throws Exception {
-        System.out.println("What market would you like to start?");
-        Database.DisplayMarkets();
-        market = new CryptoMarket(userInput.nextLine());
+
+        ArrayList<String> marketList = Database.GetMarketList();
+        while(!marketList.contains(marketName)) {
+            System.out.println("What market would you like to start?");
+            Database.DisplayMarkets();
+            marketName = userInput.nextLine();
+        }
+        market = new CryptoMarket(marketName);
         log.info(String.format("Market is starting up"));
         
         try {

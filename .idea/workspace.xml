@@ -29,8 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="176b5872-b29c-4e88-9edd-ec01bb2a82ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broker/src/main/java/com/fixme/broker/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/broker/src/main/java/com/fixme/broker/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fix-me.db" beforeDir="false" afterPath="$PROJECT_DIR$/fix-me.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +100,7 @@
       <workItem from="1606514766504" duration="702000" />
       <workItem from="1606517446097" duration="12000" />
       <workItem from="1606941357572" duration="1032000" />
-      <workItem from="1607005532847" duration="4886000" />
+      <workItem from="1607005532847" duration="6815000" />
     </task>
     <servers />
   </component>
