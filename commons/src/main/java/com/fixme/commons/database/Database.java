@@ -9,9 +9,9 @@ public class Database {
         try {
             CreateMarketsTable();
             CreateTransactionsTable();
-            InsertMarkets("Crypto", "ETH,Ethereum\nXRP,Ripple\nLTC,Litecoin\nUSDT,Tether\nBCH,Bitcoin Cash\nLIBRA,Libra\nXMR,Monero\nEOS,EOS\nBNB,Binance Coin\nETH,Ethereum");
-            InsertMarkets("Stocks", "BPYU,BrookfieldProperty\nNRG,NRGEnergy\nARD,ArdaghGroup\nNLOK,NortonLifeLock\nEAF,GrafTechInternational\nBDN,BrandywineRealtyTrust\nROK,RockwellAutomation\nZM,ZoomVideoCommunications\nCRM,Salesforce.com\nAGCO,AGCOCorp");
-            InsertMarkets("Jadon", "SFB,Surfboard\nWX,Wax\nWTS,Wetsuits\nFIN,Fins\nLSH,Leash\nTRAC,Traction\nVNSO,VansOriginals\nRIP,Ripcurl\nCAP,Cap\nBTS,Booties");
+            // InsertMarkets("Crypto", "ETH,Ethereum\nXRP,Ripple\nLTC,Litecoin\nUSDT,Tether\nBCH,Bitcoin Cash\nLIBRA,Libra\nXMR,Monero\nEOS,EOS\nBNB,Binance Coin\nETH,Ethereum");
+            // InsertMarkets("Stocks", "BPYU,BrookfieldProperty\nNRG,NRGEnergy\nARD,ArdaghGroup\nNLOK,NortonLifeLock\nEAF,GrafTechInternational\nBDN,BrandywineRealtyTrust\nROK,RockwellAutomation\nZM,ZoomVideoCommunications\nCRM,Salesforce.com\nAGCO,AGCOCorp");
+            // InsertMarkets("Jadon", "SFB,Surfboard\nWX,Wax\nWTS,Wetsuits\nFIN,Fins\nLSH,Leash\nTRAC,Traction\nVNSO,VansOriginals\nRIP,Ripcurl\nCAP,Cap\nBTS,Booties");
         } catch (Exception e) {
             System.out.println("InitialiseDB Exception: " + e);
         };
@@ -107,6 +107,22 @@ public class Database {
             SQLiteHelper.CloseConnection(conn);
         }
         return null;
+    }
+
+    public static void DisplayMarkets() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT market_name FROM markets";
+        Connection conn = SQLiteHelper.GetInstance();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                System.out.println(rs.getString("market_name"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            SQLiteHelper.CloseConnection(conn);
+        }
     }
 
     public static ResultSet GetAllTransactions() throws SQLException, ClassNotFoundException {

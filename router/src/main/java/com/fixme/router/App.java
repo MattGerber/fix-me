@@ -25,7 +25,7 @@ public class App {
         try {
             Database.InitialiseDB();
             MarketResults marketResults = Database.GetMarketByName("Crypto");
-            System.out.println(marketResults.toString());
+            // System.out.println(marketResults.toString());
 
         } catch (Exception e){
             System.out.println(e);

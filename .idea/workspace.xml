@@ -28,27 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="176b5872-b29c-4e88-9edd-ec01bb2a82ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/broker/broker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commons/commons.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/market/market.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router/router.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fix-me.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fix-me.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fix-me.db" beforeDir="false" afterPath="$PROJECT_DIR$/fix-me.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/markets/CryptoMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/markets/CryptoMarket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/src/main/java/com/fixme/router/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/router/src/main/java/com/fixme/router/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +100,7 @@
       <workItem from="1606514766504" duration="702000" />
       <workItem from="1606517446097" duration="12000" />
       <workItem from="1606941357572" duration="1032000" />
-      <workItem from="1607005532847" duration="3491000" />
+      <workItem from="1607005532847" duration="4886000" />
     </task>
     <servers />
   </component>

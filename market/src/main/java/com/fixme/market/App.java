@@ -6,15 +6,18 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.logging.Logger;
+import java.util.*;
 import java.math.BigInteger;
 import java.math.BigDecimal;
 
 
+import com.fixme.commons.database.Database;
 import com.fixme.commons.messaging.*;
 import com.fixme.commons.orders.Order;
 import com.fixme.market.markets.CryptoMarket;
 import com.fixme.market.markets.Instrument;
 
+import javax.xml.crypto.Data;
 
 
 public class App {
@@ -25,13 +28,16 @@ public class App {
     private static Socket socket;
     private static PrintWriter out;
     private static BufferedReader in;
-    private static CryptoMarket market = new CryptoMarket("Jadon");
+    private static CryptoMarket market;
+    private static Scanner userInput = new Scanner(System.in);
     public static final Logger log = Logger.getLogger( "Market" );
 
     public static void main( String[] args ) throws Exception {
-
+        System.out.println("What market would you like to start?");
+        Database.DisplayMarkets();
+        market = new CryptoMarket(userInput.nextLine());
         log.info(String.format("Market is starting up"));
-
+        
         try {
             socket = new Socket("localhost", 5001);
         } catch (Exception e) {
