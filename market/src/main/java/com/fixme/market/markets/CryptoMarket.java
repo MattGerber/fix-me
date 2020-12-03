@@ -1,31 +1,35 @@
 package com.fixme.market.markets;
 
+import com.fixme.commons.database.Database;
+import com.fixme.commons.database.Items;
+import com.fixme.commons.database.MarketResults;
+
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner; // Import the Scanner class to read text files
 import java.net.URL; 
 
 public class CryptoMarket extends Market{
 
-	public CryptoMarket() {
-		super("Crypto");
+	public CryptoMarket(String marketName) {
+		super(marketName);
 
         // This should be pulled from a file to add alternate markets.
+
         try {
-            System.out.println("sdfaf" + getClass().getResource("crypto.txt"));
-            // URL url = getClass().getResource("Inventories");
-            File f = new File("C:\\Users\\Matthew Gerber\\Documents\\fix-meme\\market\\src\\main\\java\\com\\fixme\\market\\markets\\Inventories\\crypto.txt");
-            Scanner reader = new Scanner(f);
-            while(reader.hasNextLine()){
-                String data = reader.nextLine();
-                String[] item = data.split(",");
-                instruments.add(new Instrument(item[0], item[1]));
-            }
-            reader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            MarketResults marketResults = Database.GetMarketByName(marketName);
+            for (Items i : marketResults.getItemList())
+                instruments.add(new Instrument(i.getCode(), i.getProduct()));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+
+
 		// instruments.add(new Instrument("ETH", "Ethereum"));
         // instruments.add(new Instrument("XRP", "Ripple"));
         // instruments.add(new Instrument("LTC", "Litecoin"));

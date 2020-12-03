@@ -8,6 +8,9 @@ import java.util.logging.Logger;
 import com.fixme.router.routing.RoutingTable;
 import com.fixme.router.sockets.*;
 
+import com.fixme.commons.database.*;
+
+
 public class App {
     static {
         System.setProperty("java.util.logging.SimpleFormatter.format","[%1$tF %1$tT] [\u001b[32;1mROUTER\u001b[0m] [%4$-7s] %5$s %n");
@@ -16,10 +19,19 @@ public class App {
     public static final ExecutorService executor = Executors.newFixedThreadPool(100);
     public static final Logger log = Logger.getLogger("Router");
 
+
     public static void main( String[] args ) {
 
-        log.info("Router Application Start");
+        try {
+            Database.InitialiseDB();
+            MarketResults marketResults = Database.GetMarketByName("Crypto");
+            System.out.println(marketResults.toString());
 
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        
+        log.info("Router Application Start");
         executor.submit(new FixmeSocketServer(5000, "broker"));
         executor.submit(new FixmeSocketServer(5001, "market"));
 

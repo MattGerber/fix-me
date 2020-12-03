@@ -15,7 +15,7 @@ import com.fixme.commons.orders.Order;
 import com.fixme.market.markets.CryptoMarket;
 import com.fixme.market.markets.Instrument;
 
-import com.fixme.commons.database.*;
+
 
 public class App {
     static {
@@ -25,12 +25,11 @@ public class App {
     private static Socket socket;
     private static PrintWriter out;
     private static BufferedReader in;
-    private static CryptoMarket market = new CryptoMarket();
+    private static CryptoMarket market = new CryptoMarket("Jadon");
     public static final Logger log = Logger.getLogger( "Market" );
 
     public static void main( String[] args ) throws Exception {
 
-        Database.InitialiseDB();
         log.info(String.format("Market is starting up"));
 
         try {

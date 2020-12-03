@@ -3,15 +3,64 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="176b5872-b29c-4e88-9edd-ec01bb2a82ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/broker/broker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commons/commons.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/market.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/router/router.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fix-me.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fix-me.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/markets/CryptoMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/markets/CryptoMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/src/main/java/com/fixme/router/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/router/src/main/java/com/fixme/router/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,10 +79,31 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Avaj_launvher" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.fixme.commons" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,16 +116,54 @@
       <workItem from="1606514534755" duration="105000" />
       <workItem from="1606514766504" duration="702000" />
       <workItem from="1606517446097" duration="12000" />
+      <workItem from="1606941357572" duration="1032000" />
+      <workItem from="1607005532847" duration="3491000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607005558931">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1607005558931" />
+    <state x="1042" y="401" key="#com.intellij.ide.util.MemberChooser" timestamp="1607013843913">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1042" y="401" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1607013843913" />
+    <state x="871" y="624" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1607011616186">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="871" y="624" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1607011616186" />
+    <state x="1076" y="581" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1607011624033">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1076" y="581" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.2560.1400@0.0.2560.1400" timestamp="1607011624033" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1606517456407">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1606517456407" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1607005646864">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.2560.1400@0.0.2560.1400" timestamp="1607005646864" />
+    <state x="1237" y="358" key="Maven.ArtifactSearchDialog" timestamp="1606941616802">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1237" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606941616802" />
   </component>
 </project>
