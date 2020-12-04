@@ -29,8 +29,9 @@
   <component name="ChangeListManager">
     <list default="true" id="176b5872-b29c-4e88-9edd-ec01bb2a82ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broker/src/main/java/com/fixme/broker/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/broker/src/main/java/com/fixme/broker/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/commons/src/main/java/com/fixme/commons/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fix-me.db" beforeDir="false" afterPath="$PROJECT_DIR$/fix-me.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/market/src/main/java/com/fixme/market/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,21 +74,6 @@
       <recent name="com.fixme.commons" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,7 +86,8 @@
       <workItem from="1606514766504" duration="702000" />
       <workItem from="1606517446097" duration="12000" />
       <workItem from="1606941357572" duration="1032000" />
-      <workItem from="1607005532847" duration="6815000" />
+      <workItem from="1607005532847" duration="7411000" />
+      <workItem from="1607078917765" duration="1363000" />
     </task>
     <servers />
   </component>
@@ -148,5 +135,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1237" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606941616802" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1607079288973">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607079288973" />
   </component>
 </project>

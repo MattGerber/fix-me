@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.*;
 import java.math.BigInteger;
@@ -147,12 +148,18 @@ public class App {
 
         if (!order.valid) {
             sendMessage(MessageStaticFactory.rejectOrder(order, String.format("Invalid Order", instrument.name)));
+            
             return;
         }
 
         if (requestedSellPrice <= instrument.maxSellPrice) {
             instrument.availableUnits += requestedSellAmount;
             sendMessage(MessageStaticFactory.acceptOrder(order));
+            try {
+                Database.InsertTransactions(order.clientId, order.market, order.instrument, Integer.parseInt(order.amount), Double.parseDouble(order.price), "SELL");
+            } catch (Exception  e) {
+                log.warning(String.format("Unable to add transaction to database: [%s]", e.getMessage()));
+            }
         } else {
             log.warning(String.format("Rejected : Sell price for %s is too low", instrument.name));
             sendMessage(MessageStaticFactory.rejectOrder(order, String.format("Cannot sell %s at this price", instrument.name)));
@@ -174,6 +181,11 @@ public class App {
             if (requestedBuyAmount <= instrument.availableUnits) {
                 instrument.availableUnits -= requestedBuyAmount;
                 sendMessage(MessageStaticFactory.acceptOrder(order));
+                try {
+                    Database.InsertTransactions(order.clientId, order.market, order.instrument, Integer.parseInt(order.amount), Double.parseDouble(order.price), "BUY");
+                } catch (Exception  e) {
+                    log.warning(String.format("Unable to add transaction to database: [%s]", e.getMessage()));
+                }
             } else {
                 log.warning(String.format("Rejected : Not enough %s units to complete order", instrument.name));
                 sendMessage(MessageStaticFactory.rejectOrder(order, String.format("Not enough units to complete order", instrument.name)));
